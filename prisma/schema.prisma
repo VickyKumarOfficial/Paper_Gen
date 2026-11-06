@@ -1,0 +1,62 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../lib/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// Phase 0: Curriculum
+model Curriculum {
+  id       String    @id @default(cuid())
+  class    Int
+  board    String
+  subject  String
+  name     String    @default("default")
+}
+
+// Phase 0: Topic (simplified)
+model Topic {
+  id          String   @id @default(cuid())
+  name        String
+  curriculumId String
+}
+
+// Phase 0: Question
+model Question {
+  id         String   @id @default(cuid())
+  stableId   String   @unique
+  stem       String
+  type       QuestionType
+  options    Json?
+  answerKey  Json
+  marks      Int
+  topicId    String
+  status     QuestionStatus
+}
+
+// Phase 1: Blueprint
+model Blueprint {
+  id        String   @id @default(cuid())
+  class     Int
+  subject   String
+  config    Json
+  createdAt DateTime @default(now())
+}
+
+enum QuestionType {
+  MCQ_SINGLE
+  MCQ_MULTI
+  NUMERICAL
+  SHORT_ANSWER
+  MATCH_THE_FOLLOWING
+}
+
+enum QuestionStatus {
+  VERIFIED
+  CANDIDATE
+  REJECTED
+  REVIEW_NEEDED
+}

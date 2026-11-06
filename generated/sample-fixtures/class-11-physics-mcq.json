@@ -1,0 +1,44 @@
+{
+  "paperId": "fixture-cbse-11p-mcq-001",
+  "class": 11,
+  "board": "CBSE",
+  "subject": "Physics",
+  "title": "Class 11 Physics — MCQ Practice Set",
+  "chapters": ["Kinematics", "Laws of Motion"],
+  "questions": [
+    {
+      "stableId": "Q-P11-K001",
+      "type": "MCQ_SINGLE",
+      "stem": "A body moving with constant acceleration covers distances **s₁** and **s₂** in **t₁** and **t₂** seconds respectively. Which formula gives its acceleration?",
+      "options": {
+        "A": "(s₂ - s₁) / (t₂² - t₁²)",
+        "B": "2(t₂ - t₁) / (s₂ - s₁)",
+        "C": "(s₂ - s₁) / (t₂² - t₁²)",
+        "D": "(s₂ + s₁) / (t₂ + t₁)"
+      },
+      "answerKey": "A",
+      "marks": 1,
+      "difficulty": "MEDIUM",
+      "topicId": "topic-kinematics-001",
+      "status": "VERIFIED"
+    },
+    {
+      "stableId": "Q-P11-N001",
+      "type": "NUMERICAL",
+      "stem": "A particle starts from rest and moves in a straight line with constant acceleration. It covers distances **s₁** and **s₂** in **t₁** and **t₂** seconds respectively. If **s₁ = 2 m**, **s₂ = 4 m**, **t₁ = 2 s**, **t₂ = 3 s**, find acceleration (**m/s²**).",
+      "answerKey": 2,
+      "tolerance": 0.01,
+      "solution": "Using s = ut + ½at², eliminate 'u' to find a = 2 m/s².",
+      "marks": 2,
+      "difficulty": "EASY",
+      "topicId": "topic-kinematics-001",
+      "status": "VERIFIED"
+    }
+  ],
+  "blueprintSummary": {
+    "totalQuestions": 2,
+    "totalMarks": 3,
+    "difficultyDist": { "EASY": 33, "MEDIUM": 33, "HARD": 34 },
+    "questionTypes": { "MCQ_SINGLE": 1, "NUMERICAL": 1 }
+  }
+}
