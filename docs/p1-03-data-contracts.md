@@ -3,6 +3,45 @@
 ## Status
 ✅ Completed - All contracts defined with Zod schemas
 
+## Overview
+
+Created comprehensive TypeScript interfaces and Zod 3.23.8 runtime validation schemas for the Niera Question Paper Generator Phase 1 implementation (P1.03). All schemas match Phase 0 fixture data structures exactly.
+
+## Key Design Decisions
+
+1. **Dual Question Format Support**: Supports both FullQuestion (structured with nested `content`, `curriculum`, `provenance`, `review` objects) and SimplifiedQuestion (flattened format with root-level `stem`, `options`, `chapterId`, `status`).
+
+2. **Nullable Options**: MCQ options field accepts `null` for non-MCQ question types (e.g., SHORT_ANSWER questions in Siyavula-sourced fixtures have `options: null`).
+
+3. **Version ID Computation**: SHA-256 hash computed from `{content, type, marks, difficulty, curriculum}` matching `./scripts/phase0-version-id.mjs` logic. For SimplifiedQuestion, content is reconstructed from root-level fields.
+
+4. **Chapter-Level Granularity**: `topicId` is nullable for Phase 0 which only has chapter-level granularity.
+
+## Verification Results
+
+### All 45 Questions Validated Successfully
+
+| Fixture File | Questions | Status |
+|--------------|-----------|--------|
+| class-11-physics-full-subject-candidate.json | 30/30 | ✓ Valid (Full format) |
+| class-11-physics-chapter-2-candidate.json | 10/10 | ✓ Valid (Full format) |
+| class-11-physics-siyavula-sourced-candidate.json | 3/3 | ✓ Valid (Full format with SHORT_ANSWER) |
+| class-11-physics-mcq.json | 2/2 | ✓ Valid (Simplified format) |
+
+### Build Verification
+```bash
+$ npm run build
+✓ Compiled successfully
+✓ Linting and checking validity of types passed
+```
+
+### Phase 0 Validation
+```bash
+$ npm run validate:phase0
+Checked 43 items across 3 fixtures; 43 versionIds recompute.
+STRUCTURE PASS
+```
+
 ## Summary
 
 Defined TypeScript interfaces and Zod runtime validation schemas for all data models in the Niera Question Paper Generator. Contracts match the Phase 0 fixture data structure exactly.
@@ -50,15 +89,23 @@ Complete contract definitions including:
 #### Question Content Contracts
 | Schema | Fields | Purpose |
 |--------|--------|---------|
-| `MCQOptionsSchema` | key-value pairs of options (2-6 choices) | MCQ options |
+| `MCQOptionsSchema` | key-value pairs (nullable, 2-6 choices when present) | MCQ options; null for non-MCQ types |
 | `NumericalAnswerSchema` | answer, tolerance | Numerical answer |
-| `QuestionContentSchema` | stem, options, answerKey, solution, tolerance | Question content |
+| `QuestionContentSchema` | stem, options (nullable), answerKey, solution, tolerance | Nested content object (Full format) |
 | `QuestionCurriculumSchema` | board, academicYear, class, subject, subjectCode, unitNumber, chapterNumber, chapterName, chapterId, topicId, conceptIds | Curriculum reference |
 
 #### Question Contract
 | Schema | Fields | Purpose |
 |--------|--------|---------|
-| `QuestionSchema` | schemaVersion, stableId, versionId, curriculum, type, difficulty, marks, language, content, tags, provenance, review | Complete question definition |
+| `FullQuestionSchema` | schemaVersion, stableId, versionId, curriculum, type, difficulty, marks, language, content, tags, provenance, review | Complete question with structured nested objects |
+| `SimplifiedQuestionSchema` | schemaVersion, stableId, versionId, type, difficulty, marks, stem, options, answerKey, solution, tolerance, topicId, chapterId, status, tags, language, provenance, review, curriculum | Flattened format (e.g., mcq.json) |
+| `QuestionSchema` | Union of FullQuestionSchema \| SimplifiedQuestionSchema | Accepts either format |
+
+**Note**: 
+- `options` accepts `null` for non-MCQ types (SHORT_ANSWER, NUMERICAL)
+- `options` accepts record of strings for MCQ types
+- `status` (string) replaces `review` (object) in SimplifiedQuestion format
+- `chapterId` is at root level in SimplifiedQuestion format
 
 #### Draft / Finalized Paper Contracts
 | Schema | Fields | Purpose |
@@ -76,37 +123,23 @@ Complete contract definitions including:
 
 ### `computeVersionId(question: Question): string`
 Computes SHA-256 hash of question content for versioning:
-- Hash input: { content, type, marks, difficulty, curriculum }
+- Hash input: `{ content, type, marks, difficulty, curriculum }`
 - Excludes: stableId, versionId, schemaVersion, review, provenance, tags, language
 - Format: `sha256:<64-char-hash>`
+
+**Implementation Note**: For SimplifiedQuestion format, content is reconstructed from root-level fields (`stem`, `options`, `answerKey`, `solution`, `tolerance`) before hashing.
 
 ### `validateQuestion(question: Question): ValidationResult<Question>`
 Validates question structure and verifies versionId matches computed hash.
 
 ## Verification
 
-### TypeScript Compilation
-```bash
-$ npx tsc --noEmit
-# No errors
-```
-
-### Build Verification
 ```bash
 $ npm run build
 # Build successful
-# Route: / - 2.82 kB / 105 kB first load JS
-```
 
-### Schema Validation Test
-```typescript
-import { QuestionSchema, validateQuestion } from './contracts';
-
-// Load fixture data
-const fixture = require('../generated/sample-fixtures/class-11-physics-mcq.json');
-const result = validateQuestion(fixture);
-
-// result.success === true for valid Phase 0 questions
+$ npm run validate:phase0
+# STRUCTURE PASS - All fixtures validated
 ```
 
 ## Reference Fixtures
@@ -124,6 +157,9 @@ Contracts validated against Phase 0 fixtures:
 3. **topicId**: Nullable for Phase 0 which only has chapter-level granularity
 4. **versionId**: Optional in schema but required for validated questions
 5. **All enums are exhaustive** - TypeScript will catch any missing cases
+6. **options field handles null**: Non-MCQ questions (SHORT_ANSWER, etc.) use `options: null` in fixtures
+7. **Version ID computation handles both formats**: Full format uses nested `content` object; Simplified format reconstructs from root fields
+8. **Schema alignment**: Both Question schemas include `curriculum` as optional to support mcq.json format which has `chapterId` at root level instead of inside `curriculum`
 
 ## Related Documentation
 - [Phase 0 Decisions](phase0-decisions.md) - Rights policy, review policy

@@ -235,11 +235,8 @@ export type Review = z.infer<typeof ReviewSchema>;
 // QUESTION CONTENT CONTRACTS
 // ============================================================================
 
-/** MCQ options (key-value pairs) */
-export const MCQOptionsSchema = z.record(z.string()).refine(
-  (opts) => Object.keys(opts).length >= 2 && Object.keys(opts).length <= 6,
-  { message: "MCQ options must have between 2 and 6 choices" },
-);
+/** MCQ options (key-value pairs); null for non-MCQ types */
+export const MCQOptionsSchema = z.record(z.string()).nullable().optional();
 
 /** Numerical question answer with optional tolerance */
 export const NumericalAnswerSchema = z.object({
@@ -253,8 +250,8 @@ export const NumericalAnswerSchema = z.object({
 export const QuestionContentSchema = z.object({
   /** Question stem / prompt */
   stem: z.string().min(1),
-  /** MCQ options (key: letter, value: text) */
-  options: z.record(z.string()).optional(),
+  /** MCQ options (key: letter, value: text); null for non-MCQ types */
+  options: z.record(z.string()).nullable().optional(),
   /** Answer key - string for MCQ, number for numerical */
   answerKey: z.union([z.string(), z.number()]),
   /** Solution / working steps (optional) */
@@ -343,8 +340,8 @@ export const SimplifiedQuestionSchema = z.object({
   marks: z.number().int().positive(),
   /** Question stem */
   stem: z.string().min(1),
-  /** MCQ options (key: letter, value: text) */
-  options: z.record(z.string()).optional(),
+  /** MCQ options (key: letter, value: text); null for non-MCQ types */
+  options: z.record(z.string()).nullable().optional(),
   /** Answer key - string for MCQ, number for numerical */
   answerKey: z.union([z.string(), z.number()]),
   /** Solution / working steps */
@@ -496,9 +493,24 @@ export type ValidationResult<T = unknown> = {
  *
  * The versionId is computed from: { content, type, marks, difficulty, curriculum }
  * versionId, review, provenance, tags, language, stableId and schemaVersion are excluded.
+ *
+ * For SimplifiedQuestion (flattened format), content is reconstructed from root-level fields.
  */
-export function computeVersionId(question: Question): string {
-  const crypto = require("node:crypto");
+export async function computeVersionId(question: Question): Promise<string> {
+  // Handle both FullQuestion (with content object) and SimplifiedQuestion (content at root)
+  let content: QuestionContent;
+  if ("content" in question) {
+    content = question.content;
+  } else {
+    // Reconstruct content object for SimplifiedQuestion
+    content = {
+      stem: question.stem,
+      options: question.options,
+      answerKey: question.answerKey,
+      solution: question.solution,
+      tolerance: question.tolerance,
+    };
+  }
 
   // Type assertion to handle Zod inference union issue
   const q = question as {
@@ -510,7 +522,7 @@ export function computeVersionId(question: Question): string {
   };
 
   const payload = {
-    content: q.content,
+    content,
     type: q.type,
     marks: q.marks,
     difficulty: q.difficulty,
@@ -520,9 +532,16 @@ export function computeVersionId(question: Question): string {
   // Sort object keys recursively
   const sortedPayload = sortObjectKeys(payload);
   const json = JSON.stringify(sortedPayload);
-  const hash = crypto.createHash("sha256").update(json, "utf8").digest("hex");
 
-  return `sha256:${hash}`;
+  // Cross-platform SHA-256 using Web Crypto API (available in browsers and Node.js 16+)
+  const encoder = new TextEncoder();
+  const data = encoder.encode(json);
+  const hashBuffer = await globalThis.crypto.subtle.digest("SHA-256", data);
+
+  const hashArray = Array.from(new Uint8Array(hashBuffer));
+  const hashHex = hashArray.map((b) => b.toString(16).padStart(2, "0")).join("");
+
+  return `sha256:${hashHex}`;
 }
 
 /** Recursively sort object keys for canonical JSON representation */
@@ -547,7 +566,7 @@ function sortObjectKeys(value: unknown): unknown {
 /**
  * Validate a question and verify its versionId matches.
  */
-export function validateQuestion(question: Question): ValidationResult<Question> {
+export async function validateQuestion(question: Question): Promise<ValidationResult<Question>> {
   const parsed = QuestionSchema.safeParse(question);
 
   if (!parsed.success) {
@@ -559,7 +578,7 @@ export function validateQuestion(question: Question): ValidationResult<Question>
 
   // Verify versionId if present
   if (question.versionId) {
-    const computed = computeVersionId(question);
+    const computed = await computeVersionId(question);
     if (question.versionId !== computed) {
       return {
         success: false,

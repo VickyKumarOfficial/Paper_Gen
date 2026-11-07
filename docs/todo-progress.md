@@ -19,9 +19,9 @@ Phase 0 decisions and evidence are in two files: [decisions](phase0-decisions.md
 | UI shell | Implemented | Class/subject selectors with Phase 0 support matrix; [UI proof](ui-refresh-proof.md). Only CBSE Class 11 Physics shown. |
 | Curriculum and data | Aligned | Schema updated per P1.04; Prisma Client generated successfully. [Schema proof](p1-04-schema-alignment.md). [Contracts](p1-03-data-contracts.md). |
 | Verified content | 40 owner-approved items | Full-subject (30) and Chapter 2 (10) items approved by the product owner; both templates feasible per `npm run validate:phase0`. See [question bank](phase0-question-bank.md). |
-| Core pipeline | Not started | No resolver, blueprint builder, bank selector, assembler, or paper-level validator. |
+| Core pipeline | **Phase 1 Complete** | Curriculum resolver, chapter picker, question bank loader working. API routes at `/api/curriculum` and `/api/questions`. Preview shows actual fixture questions. Exit gate passed. |
 | AI, persistence, export | Not started | Described in docs only. |
-| Quality evidence | Not started | No tests or measured benchmark results for generation, export, or scale. |
+| Quality evidence | **Phase 1 Complete** | Phase 0 validation passes; curriculum resolver tests; contract tests; edge case testing; both flows verified. |
 
 ## Phase 0: supported scope and trustworthy fixtures
 
@@ -45,11 +45,11 @@ Exit gate: Class → Subject → Preview works with reviewed fixture questions; 
 - [x] P1.02 Replace hardcoded class/subject choices with the confirmed support matrix. Hide or disable combinations without verified coverage, and display the selected curriculum/pattern default. Evidence: [Support matrix proof](p1-02-support-matrix-improvements.md). Only CBSE Class 11 Physics (edition: cbse-2026-27-phy-042-xi) is supported.
 - [x] P1.03 Define runtime-checked request, curriculum, blueprint, slot, question, draft, finalized-paper, and validation-result contracts. Document field meaning, version IDs, and error shapes. Evidence: [Contracts documentation](p1-03-data-contracts.md). File: `src/lib/contracts.ts`.
 - [x] P1.04 Align Prisma schema, generated client import, seed data, and migration workflow. Seed must compile and run repeatedly without duplicate curriculum data. Add real curriculum/chapter/topic/concept relationships where required by the confirmed slice. Evidence: [Schema alignment proof](p1-04-schema-alignment.md), `npx prisma generate` completed successfully.
-- [ ] P1.05 Implement the curriculum resolver for a supported class+subject. An empty chapter/topic list resolves the eligible full subject; selected IDs must belong to the pinned curriculum version.
-- [ ] P1.06 Add the optional chapter/topic picker and clear incompatible selections when class or subject changes. Show exact selected scope.
-- [ ] P1.07 Connect the UI preview to reviewed fixture questions and their section/marks data. Do not show a generated-paper success state with an empty question list.
-- [ ] P1.08 Test missing class/subject, class change, invalid topic ID, unsupported combination, full-subject default, and selected-chapter scope. Add proof to `/docs`.
-- [ ] P1.09 Confirm Phase 1 exit with browser evidence and contract tests for both primary and filtered flows.
+- [x] P1.05 Implement the curriculum resolver for a supported class+subject. An empty chapter/topic list resolves the eligible full subject; selected IDs must belong to the pinned curriculum version. Evidence: Curriculum resolver in `src/lib/curriculum-resolver.ts` with API route at `/api/curriculum`; tests in `src/lib/curriculum-resolver.test.ts`.
+- [x] P1.06 Add the optional chapter/topic picker and clear incompatible selections when class or subject changes. Show exact selected scope. Evidence: `src/components/ChapterPicker.tsx` with unit-grouped checkboxes, "Select All"/"Clear All", scope display in preview sidebar.
+- [x] P1.07 Connect the UI preview to reviewed fixture questions and their section/marks data. Do not show a generated-paper success state with an empty question list. Evidence: `src/lib/question-bank.ts` with API route at `/api/questions`; preview shows question cards with stem, marks, difficulty, chapter; loading/error states; shortfall warning.
+- [x] P1.08 Test missing class/subject, class change, invalid topic ID, unsupported combination, full-subject default, and selected-chapter scope. Add proof to [/docs/p1-08-edge-case-testing.md](docs/p1-08-edge-case-testing.md).
+- [x] P1.09 Confirm Phase 1 exit with browser evidence and contract tests for both primary and filtered flows. Evidence: [Phase 1 exit confirmation](p1-09-phase1-exit.md). Flow A (full subject): 14 chapters, 30 questions. Flow B (ch02 filtered): 1 chapter, 10 questions. All contracts validate.
 
 ## Phase 2: deterministic blueprint
 
@@ -139,4 +139,4 @@ Exit gate: roadmap Section 9 quality gates pass; known limits and measured laten
 
 ## Immediate next milestone
 
-Phase 0 is closed. Next: P1.03–P1.07, showing an actual paper from the 40 approved items in the UI with a consistent blueprint. Do not start model generation or PDF work early.
+**Phase 0 and Phase 1 are complete.** Class → Subject → Chapter → Preview works with reviewed fixture questions for both Flow A (full subject: 30 questions) and Flow B (chapter-filtered: 10 questions). Exit gate passed. Next: **Phase 2 - Deterministic Blueprint Engine** (P2.01+). Do not start model generation or PDF work early.
