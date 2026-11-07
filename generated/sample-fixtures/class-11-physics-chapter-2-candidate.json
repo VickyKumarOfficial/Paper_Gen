@@ -1,0 +1,621 @@
+{
+  "fixtureId": "candidate-cbse-xi-physics-ch02-2026-27-001",
+  "status": "OWNER_APPROVED_2026-11-07",
+  "class": 11,
+  "subject": "Physics",
+  "curriculumCandidate": "CBSE Class XI Physics 2026-27, subject code 042",
+  "pattern": "Niera single-subject practice candidate; not an official CBSE paper pattern",
+  "scope": {
+    "unit": "II. Kinematics",
+    "chapterNumber": 2,
+    "chapter": "Motion in a Straight Line"
+  },
+  "section": {
+    "label": "A",
+    "type": "MCQ_SINGLE",
+    "count": 10,
+    "marksEach": 1
+  },
+  "suggestedDurationMinutes": 20,
+  "totalQuestions": 10,
+  "totalMarks": 10,
+  "difficultyCounts": {
+    "EASY": 3,
+    "MEDIUM": 5,
+    "HARD": 2
+  },
+  "questions": [
+    {
+      "schemaVersion": "phase0-question-v1",
+      "stableId": "CAND-P11-C02-001",
+      "versionId": "sha256:2f96010cf823d0602e986e75fa66a09dcfc18b9483298bd8d5fbc05122666029",
+      "curriculum": {
+        "board": "CBSE",
+        "academicYear": "2026-27",
+        "class": 11,
+        "subject": "Physics",
+        "subjectCode": "042",
+        "unitNumber": 2,
+        "unitName": "Kinematics",
+        "chapterNumber": 2,
+        "chapterName": "Motion in a Straight Line",
+        "chapterId": "cbse-2026-27-phy-042-xi-ch02",
+        "topicId": null,
+        "topicLabel": "position and displacement in one dimension",
+        "conceptIds": []
+      },
+      "type": "MCQ_SINGLE",
+      "difficulty": "EASY",
+      "marks": 1,
+      "language": "en",
+      "content": {
+        "stem": "Along a straight track, east is positive. A walker moves 6 m east and then 2 m west. What is the walker's displacement?",
+        "options": {
+          "A": "4 m east",
+          "B": "4 m west",
+          "C": "8 m east",
+          "D": "8 m west"
+        },
+        "answerKey": "A",
+        "solution": "Signed displacement is +6 m - 2 m = +4 m, so it is 4 m east. The total distance is 8 m, which is a different quantity."
+      },
+      "tags": [
+        "kinematics",
+        "straight-line-motion",
+        "position-and-displacement-in-one-dimension"
+      ],
+      "provenance": {
+        "sourceTitle": "original candidate for Niera",
+        "sourceUrl": null,
+        "sourceItemId": null,
+        "creator": "AI-assisted draft by Codex for Niera",
+        "originKind": "NEWLY_AUTHORED_CANDIDATE",
+        "originNote": "original wording and numerical examples drafted for this fixture; official CBSE syllabus used for topic scope only",
+        "extractedAt": null,
+        "licence": null,
+        "attribution": null,
+        "rightsRecordId": "RR-NIERA-ORIGINAL-2026-11-07",
+        "rightsStatus": "CLEARED_UNDER_POLICY"
+      },
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "Product owner (VickyKumarOfficial)",
+        "reviewedAt": "2026-11-07",
+        "evidenceId": "REV-OWNER-2026-11-07"
+      }
+    },
+    {
+      "schemaVersion": "phase0-question-v1",
+      "stableId": "CAND-P11-C02-002",
+      "versionId": "sha256:4852142054f5caf23f92443579cba1ef9c8bb9fbcf85b3b398fd79423a4554e8",
+      "curriculum": {
+        "board": "CBSE",
+        "academicYear": "2026-27",
+        "class": 11,
+        "subject": "Physics",
+        "subjectCode": "042",
+        "unitNumber": 2,
+        "unitName": "Kinematics",
+        "chapterNumber": 2,
+        "chapterName": "Motion in a Straight Line",
+        "chapterId": "cbse-2026-27-phy-042-xi-ch02",
+        "topicId": null,
+        "topicLabel": "position-time graph and uniform velocity",
+        "conceptIds": []
+      },
+      "type": "MCQ_SINGLE",
+      "difficulty": "EASY",
+      "marks": 1,
+      "language": "en",
+      "content": {
+        "stem": "A particle's position on a straight line is x = 5 m + (2 m/s)t. What is the slope of its position-time graph?",
+        "options": {
+          "A": "7 m/s",
+          "B": "5 m/s",
+          "C": "2 m/s",
+          "D": "0.4 m/s"
+        },
+        "answerKey": "C",
+        "solution": "The slope is dx/dt. Differentiating x = 5 + 2t gives dx/dt = 2 m/s; the initial position 5 m does not change the slope."
+      },
+      "tags": [
+        "kinematics",
+        "straight-line-motion",
+        "position-time-graph-and-uniform-velocity"
+      ],
+      "provenance": {
+        "sourceTitle": "original candidate for Niera",
+        "sourceUrl": null,
+        "sourceItemId": null,
+        "creator": "AI-assisted draft by Codex for Niera",
+        "originKind": "NEWLY_AUTHORED_CANDIDATE",
+        "originNote": "original wording and numerical examples drafted for this fixture; official CBSE syllabus used for topic scope only",
+        "extractedAt": null,
+        "licence": null,
+        "attribution": null,
+        "rightsRecordId": "RR-NIERA-ORIGINAL-2026-11-07",
+        "rightsStatus": "CLEARED_UNDER_POLICY"
+      },
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "Product owner (VickyKumarOfficial)",
+        "reviewedAt": "2026-11-07",
+        "evidenceId": "REV-OWNER-2026-11-07"
+      }
+    },
+    {
+      "schemaVersion": "phase0-question-v1",
+      "stableId": "CAND-P11-C02-003",
+      "versionId": "sha256:c56a5feffeb0e7af1477754287a0be4b53755a233957fa73d71b8b8920da43a4",
+      "curriculum": {
+        "board": "CBSE",
+        "academicYear": "2026-27",
+        "class": 11,
+        "subject": "Physics",
+        "subjectCode": "042",
+        "unitNumber": 2,
+        "unitName": "Kinematics",
+        "chapterNumber": 2,
+        "chapterName": "Motion in a Straight Line",
+        "chapterId": "cbse-2026-27-phy-042-xi-ch02",
+        "topicId": null,
+        "topicLabel": "average speed",
+        "conceptIds": []
+      },
+      "type": "MCQ_SINGLE",
+      "difficulty": "EASY",
+      "marks": 1,
+      "language": "en",
+      "content": {
+        "stem": "A cart travels 90 m along a straight track in 15 s without reversing. What is its average speed?",
+        "options": {
+          "A": "15 m/s",
+          "B": "6 m/s",
+          "C": "75 m/s",
+          "D": "1350 m/s"
+        },
+        "answerKey": "B",
+        "solution": "Average speed is total distance divided by elapsed time: 90 m / 15 s = 6 m/s."
+      },
+      "tags": [
+        "kinematics",
+        "straight-line-motion",
+        "average-speed"
+      ],
+      "provenance": {
+        "sourceTitle": "original candidate for Niera",
+        "sourceUrl": null,
+        "sourceItemId": null,
+        "creator": "AI-assisted draft by Codex for Niera",
+        "originKind": "NEWLY_AUTHORED_CANDIDATE",
+        "originNote": "original wording and numerical examples drafted for this fixture; official CBSE syllabus used for topic scope only",
+        "extractedAt": null,
+        "licence": null,
+        "attribution": null,
+        "rightsRecordId": "RR-NIERA-ORIGINAL-2026-11-07",
+        "rightsStatus": "CLEARED_UNDER_POLICY"
+      },
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "Product owner (VickyKumarOfficial)",
+        "reviewedAt": "2026-11-07",
+        "evidenceId": "REV-OWNER-2026-11-07"
+      }
+    },
+    {
+      "schemaVersion": "phase0-question-v1",
+      "stableId": "CAND-P11-C02-004",
+      "versionId": "sha256:ac69a1d15c46338da92e7bd6d4885bfdf0eef8812475bdbf45bce9b0efccebf8",
+      "curriculum": {
+        "board": "CBSE",
+        "academicYear": "2026-27",
+        "class": 11,
+        "subject": "Physics",
+        "subjectCode": "042",
+        "unitNumber": 2,
+        "unitName": "Kinematics",
+        "chapterNumber": 2,
+        "chapterName": "Motion in a Straight Line",
+        "chapterId": "cbse-2026-27-phy-042-xi-ch02",
+        "topicId": null,
+        "topicLabel": "acceleration from velocity change over time",
+        "conceptIds": []
+      },
+      "type": "MCQ_SINGLE",
+      "difficulty": "MEDIUM",
+      "marks": 1,
+      "language": "en",
+      "content": {
+        "stem": "On a straight road, a vehicle's velocity rises uniformly from 2 m/s to 8 m/s in 3 s. What is its acceleration?",
+        "options": {
+          "A": "10 m/s²",
+          "B": "3 m/s²",
+          "C": "6 m/s²",
+          "D": "2 m/s²"
+        },
+        "answerKey": "D",
+        "solution": "Acceleration is the slope of the velocity-time graph: (8 - 2) m/s / 3 s = 2 m/s²."
+      },
+      "tags": [
+        "kinematics",
+        "straight-line-motion",
+        "acceleration-from-velocity-change-over-time"
+      ],
+      "provenance": {
+        "sourceTitle": "original candidate for Niera",
+        "sourceUrl": null,
+        "sourceItemId": null,
+        "creator": "AI-assisted draft by Codex for Niera",
+        "originKind": "NEWLY_AUTHORED_CANDIDATE",
+        "originNote": "original wording and numerical examples drafted for this fixture; official CBSE syllabus used for topic scope only",
+        "extractedAt": null,
+        "licence": null,
+        "attribution": null,
+        "rightsRecordId": "RR-NIERA-ORIGINAL-2026-11-07",
+        "rightsStatus": "CLEARED_UNDER_POLICY"
+      },
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "Product owner (VickyKumarOfficial)",
+        "reviewedAt": "2026-11-07",
+        "evidenceId": "REV-OWNER-2026-11-07"
+      }
+    },
+    {
+      "schemaVersion": "phase0-question-v1",
+      "stableId": "CAND-P11-C02-005",
+      "versionId": "sha256:b57778c33ae5598681326fc6cbbffe1a41b6465dd70f4bd31a59fbd36f9c9166",
+      "curriculum": {
+        "board": "CBSE",
+        "academicYear": "2026-27",
+        "class": 11,
+        "subject": "Physics",
+        "subjectCode": "042",
+        "unitNumber": 2,
+        "unitName": "Kinematics",
+        "chapterNumber": 2,
+        "chapterName": "Motion in a Straight Line",
+        "chapterId": "cbse-2026-27-phy-042-xi-ch02",
+        "topicId": null,
+        "topicLabel": "instantaneous velocity from position",
+        "conceptIds": []
+      },
+      "type": "MCQ_SINGLE",
+      "difficulty": "MEDIUM",
+      "marks": 1,
+      "language": "en",
+      "content": {
+        "stem": "For t in seconds, a particle's position on a line is x(t) = 3t² - 2t + 1 metres. What is its instantaneous velocity at t = 2 s?",
+        "options": {
+          "A": "7 m/s",
+          "B": "10 m/s",
+          "C": "12 m/s",
+          "D": "14 m/s"
+        },
+        "answerKey": "B",
+        "solution": "v(t) = dx/dt = 6t - 2 m/s. At t = 2 s, v = 12 - 2 = 10 m/s."
+      },
+      "tags": [
+        "kinematics",
+        "straight-line-motion",
+        "instantaneous-velocity-from-position"
+      ],
+      "provenance": {
+        "sourceTitle": "original candidate for Niera",
+        "sourceUrl": null,
+        "sourceItemId": null,
+        "creator": "AI-assisted draft by Codex for Niera",
+        "originKind": "NEWLY_AUTHORED_CANDIDATE",
+        "originNote": "original wording and numerical examples drafted for this fixture; official CBSE syllabus used for topic scope only",
+        "extractedAt": null,
+        "licence": null,
+        "attribution": null,
+        "rightsRecordId": "RR-NIERA-ORIGINAL-2026-11-07",
+        "rightsStatus": "CLEARED_UNDER_POLICY"
+      },
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "Product owner (VickyKumarOfficial)",
+        "reviewedAt": "2026-11-07",
+        "evidenceId": "REV-OWNER-2026-11-07"
+      }
+    },
+    {
+      "schemaVersion": "phase0-question-v1",
+      "stableId": "CAND-P11-C02-006",
+      "versionId": "sha256:0ae269355c0f66d600016ff2b6c6e96ae13ad1382bc21545b05a1eb121245f4d",
+      "curriculum": {
+        "board": "CBSE",
+        "academicYear": "2026-27",
+        "class": 11,
+        "subject": "Physics",
+        "subjectCode": "042",
+        "unitNumber": 2,
+        "unitName": "Kinematics",
+        "chapterNumber": 2,
+        "chapterName": "Motion in a Straight Line",
+        "chapterId": "cbse-2026-27-phy-042-xi-ch02",
+        "topicId": null,
+        "topicLabel": "net displacement from piecewise constant velocities",
+        "conceptIds": []
+      },
+      "type": "MCQ_SINGLE",
+      "difficulty": "MEDIUM",
+      "marks": 1,
+      "language": "en",
+      "content": {
+        "stem": "A particle moves on a straight line at +4 m/s for 3 s and then at -2 m/s for 2 s. What is its net displacement during the 5 s?",
+        "options": {
+          "A": "+12 m",
+          "B": "+16 m",
+          "C": "+8 m",
+          "D": "-8 m"
+        },
+        "answerKey": "C",
+        "solution": "Add signed areas under the velocity-time graph: (+4)(3) + (-2)(2) = 12 - 4 = +8 m."
+      },
+      "tags": [
+        "kinematics",
+        "straight-line-motion",
+        "net-displacement-from-piecewise-constant-velocities"
+      ],
+      "provenance": {
+        "sourceTitle": "original candidate for Niera",
+        "sourceUrl": null,
+        "sourceItemId": null,
+        "creator": "AI-assisted draft by Codex for Niera",
+        "originKind": "NEWLY_AUTHORED_CANDIDATE",
+        "originNote": "original wording and numerical examples drafted for this fixture; official CBSE syllabus used for topic scope only",
+        "extractedAt": null,
+        "licence": null,
+        "attribution": null,
+        "rightsRecordId": "RR-NIERA-ORIGINAL-2026-11-07",
+        "rightsStatus": "CLEARED_UNDER_POLICY"
+      },
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "Product owner (VickyKumarOfficial)",
+        "reviewedAt": "2026-11-07",
+        "evidenceId": "REV-OWNER-2026-11-07"
+      }
+    },
+    {
+      "schemaVersion": "phase0-question-v1",
+      "stableId": "CAND-P11-C02-007",
+      "versionId": "sha256:910c5380ecc95c50e0dcb9d88d8b434030b9e79a4330a0886a63c3986316e311",
+      "curriculum": {
+        "board": "CBSE",
+        "academicYear": "2026-27",
+        "class": 11,
+        "subject": "Physics",
+        "subjectCode": "042",
+        "unitNumber": 2,
+        "unitName": "Kinematics",
+        "chapterNumber": 2,
+        "chapterName": "Motion in a Straight Line",
+        "chapterId": "cbse-2026-27-phy-042-xi-ch02",
+        "topicId": null,
+        "topicLabel": "displacement under uniform acceleration",
+        "conceptIds": []
+      },
+      "type": "MCQ_SINGLE",
+      "difficulty": "MEDIUM",
+      "marks": 1,
+      "language": "en",
+      "content": {
+        "stem": "A trolley starts from rest and accelerates at a constant 2 m/s² along a straight line. How far does it travel in the first 4 s?",
+        "options": {
+          "A": "16 m",
+          "B": "8 m",
+          "C": "32 m",
+          "D": "4 m"
+        },
+        "answerKey": "A",
+        "solution": "With initial speed zero, displacement s = ut + at²/2 = 0 + (2)(4²)/2 = 16 m."
+      },
+      "tags": [
+        "kinematics",
+        "straight-line-motion",
+        "displacement-under-uniform-acceleration"
+      ],
+      "provenance": {
+        "sourceTitle": "original candidate for Niera",
+        "sourceUrl": null,
+        "sourceItemId": null,
+        "creator": "AI-assisted draft by Codex for Niera",
+        "originKind": "NEWLY_AUTHORED_CANDIDATE",
+        "originNote": "original wording and numerical examples drafted for this fixture; official CBSE syllabus used for topic scope only",
+        "extractedAt": null,
+        "licence": null,
+        "attribution": null,
+        "rightsRecordId": "RR-NIERA-ORIGINAL-2026-11-07",
+        "rightsStatus": "CLEARED_UNDER_POLICY"
+      },
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "Product owner (VickyKumarOfficial)",
+        "reviewedAt": "2026-11-07",
+        "evidenceId": "REV-OWNER-2026-11-07"
+      }
+    },
+    {
+      "schemaVersion": "phase0-question-v1",
+      "stableId": "CAND-P11-C02-008",
+      "versionId": "sha256:4176daf9c9f9918fb02cd217434490a1f93faf11cbd5407582bc019ef3519773",
+      "curriculum": {
+        "board": "CBSE",
+        "academicYear": "2026-27",
+        "class": 11,
+        "subject": "Physics",
+        "subjectCode": "042",
+        "unitNumber": 2,
+        "unitName": "Kinematics",
+        "chapterNumber": 2,
+        "chapterName": "Motion in a Straight Line",
+        "chapterId": "cbse-2026-27-phy-042-xi-ch02",
+        "topicId": null,
+        "topicLabel": "relations for uniformly accelerated motion",
+        "conceptIds": []
+      },
+      "type": "MCQ_SINGLE",
+      "difficulty": "MEDIUM",
+      "marks": 1,
+      "language": "en",
+      "content": {
+        "stem": "At t = 0 a particle is at x = 0. It moves along a line with constant acceleration and reaches x = 10 m at t = 2 s and x = 30 m at t = 4 s. What is its acceleration?",
+        "options": {
+          "A": "7.5 m/s²",
+          "B": "1.25 m/s²",
+          "C": "5 m/s²",
+          "D": "2.5 m/s²"
+        },
+        "answerKey": "D",
+        "solution": "Using x = ut + at²/2 gives 2u + 2a = 10 and 4u + 8a = 30. Doubling the first equation and subtracting it from the second gives 4a = 10, hence a = 2.5 m/s²."
+      },
+      "tags": [
+        "kinematics",
+        "straight-line-motion",
+        "relations-for-uniformly-accelerated-motion"
+      ],
+      "provenance": {
+        "sourceTitle": "original candidate for Niera",
+        "sourceUrl": null,
+        "sourceItemId": null,
+        "creator": "AI-assisted draft by Codex for Niera",
+        "originKind": "NEWLY_AUTHORED_CANDIDATE",
+        "originNote": "original wording and numerical examples drafted for this fixture; official CBSE syllabus used for topic scope only",
+        "extractedAt": null,
+        "licence": null,
+        "attribution": null,
+        "rightsRecordId": "RR-NIERA-ORIGINAL-2026-11-07",
+        "rightsStatus": "CLEARED_UNDER_POLICY"
+      },
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "Product owner (VickyKumarOfficial)",
+        "reviewedAt": "2026-11-07",
+        "evidenceId": "REV-OWNER-2026-11-07"
+      }
+    },
+    {
+      "schemaVersion": "phase0-question-v1",
+      "stableId": "CAND-P11-C02-009",
+      "versionId": "sha256:355d66c59778337b2703ffeb6f5290cf1b39dc56a8f9a518d177994e4358f038",
+      "curriculum": {
+        "board": "CBSE",
+        "academicYear": "2026-27",
+        "class": 11,
+        "subject": "Physics",
+        "subjectCode": "042",
+        "unitNumber": 2,
+        "unitName": "Kinematics",
+        "chapterNumber": 2,
+        "chapterName": "Motion in a Straight Line",
+        "chapterId": "cbse-2026-27-phy-042-xi-ch02",
+        "topicId": null,
+        "topicLabel": "total distance from non-uniform position-time relation",
+        "conceptIds": []
+      },
+      "type": "MCQ_SINGLE",
+      "difficulty": "HARD",
+      "marks": 1,
+      "language": "en",
+      "content": {
+        "stem": "A particle's position on a straight line is x(t) = t³ - 6t² + 9t metres for 0 ≤ t ≤ 4 s. What total distance does it travel in that interval?",
+        "options": {
+          "A": "4 m",
+          "B": "12 m",
+          "C": "8 m",
+          "D": "16 m"
+        },
+        "answerKey": "B",
+        "solution": "v = dx/dt = 3(t - 1)(t - 3), so direction changes at 1 s and 3 s. Positions are x(0)=0, x(1)=4, x(3)=0, x(4)=4 m. Total distance is |4-0| + |0-4| + |4-0| = 12 m."
+      },
+      "tags": [
+        "kinematics",
+        "straight-line-motion",
+        "total-distance-from-non-uniform-position-time-relation"
+      ],
+      "provenance": {
+        "sourceTitle": "original candidate for Niera",
+        "sourceUrl": null,
+        "sourceItemId": null,
+        "creator": "AI-assisted draft by Codex for Niera",
+        "originKind": "NEWLY_AUTHORED_CANDIDATE",
+        "originNote": "original wording and numerical examples drafted for this fixture; official CBSE syllabus used for topic scope only",
+        "extractedAt": null,
+        "licence": null,
+        "attribution": null,
+        "rightsRecordId": "RR-NIERA-ORIGINAL-2026-11-07",
+        "rightsStatus": "CLEARED_UNDER_POLICY"
+      },
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "Product owner (VickyKumarOfficial)",
+        "reviewedAt": "2026-11-07",
+        "evidenceId": "REV-OWNER-2026-11-07"
+      }
+    },
+    {
+      "schemaVersion": "phase0-question-v1",
+      "stableId": "CAND-P11-C02-010",
+      "versionId": "sha256:1bb2e308950c6552ba5d395f73469ed8fb5b643d9c1e52f71262b6a110467ba8",
+      "curriculum": {
+        "board": "CBSE",
+        "academicYear": "2026-27",
+        "class": 11,
+        "subject": "Physics",
+        "subjectCode": "042",
+        "unitNumber": 2,
+        "unitName": "Kinematics",
+        "chapterNumber": 2,
+        "chapterName": "Motion in a Straight Line",
+        "chapterId": "cbse-2026-27-phy-042-xi-ch02",
+        "topicId": null,
+        "topicLabel": "relative motion in a straight line",
+        "conceptIds": []
+      },
+      "type": "MCQ_SINGLE",
+      "difficulty": "HARD",
+      "marks": 1,
+      "language": "en",
+      "content": {
+        "stem": "Along one straight track, east is positive. At t = 0, cart A is at x = 0 and starts from rest with constant acceleration +2 m/s². Cart B is at x = 8 m and keeps velocity -2 m/s. What is their relative speed immediately before they meet?",
+        "options": {
+          "A": "4 m/s",
+          "B": "2 m/s",
+          "C": "6 m/s",
+          "D": "8 m/s"
+        },
+        "answerKey": "C",
+        "solution": "Their positions are x_A = t² and x_B = 8 - 2t. Setting them equal gives t² + 2t - 8 = 0, whose nonnegative root is t = 2 s. Then v_A = 2t = +4 m/s and v_B = -2 m/s; their relative speed is |4 - (-2)| = 6 m/s."
+      },
+      "tags": [
+        "kinematics",
+        "straight-line-motion",
+        "relative-motion-in-a-straight-line"
+      ],
+      "provenance": {
+        "sourceTitle": "original candidate for Niera",
+        "sourceUrl": null,
+        "sourceItemId": null,
+        "creator": "AI-assisted draft by Codex for Niera",
+        "originKind": "NEWLY_AUTHORED_CANDIDATE",
+        "originNote": "original wording and numerical examples drafted for this fixture; official CBSE syllabus used for topic scope only",
+        "extractedAt": null,
+        "licence": null,
+        "attribution": null,
+        "rightsRecordId": "RR-NIERA-ORIGINAL-2026-11-07",
+        "rightsStatus": "CLEARED_UNDER_POLICY"
+      },
+      "review": {
+        "status": "APPROVED",
+        "reviewer": "Product owner (VickyKumarOfficial)",
+        "reviewedAt": "2026-11-07",
+        "evidenceId": "REV-OWNER-2026-11-07"
+      }
+    }
+  ],
+  "originNote": "Original AI-assisted candidate questions drafted for this task; the CBSE syllabus was used only to identify Chapter 2 scope. No external question text was imported.",
+  "rightsStatus": "CLEARED_UNDER_POLICY"
+}

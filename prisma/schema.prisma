@@ -8,44 +8,180 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-// Phase 0: Curriculum
+// Phase 0: Curriculum Edition
+// Represents a specific curriculum edition (e.g., CBSE 2026-27 Class 11 Physics)
 model Curriculum {
-  id       String    @id @default(cuid())
-  class    Int
-  board    String
-  subject  String
-  name     String    @default("default")
+  id           String   @id @default(cuid())
+  editionId    String   @unique
+  name         String   @default("default")
+  class        Int
+  board        String
+  subject      String
+  subjectCode  String?
+  academicYear String?
+
+  // Source provenance
+  sourceUrl     String?
+  retrievedAt   String?
+
+  // Cryptographic hash for version identification
+  versionHash   String? @unique
+
+  // Units structure from curriculum JSON
+  // Contains array of units with unitId, unitNumber, unitRoman, unitName, chapterIds
+  units         Json?
+
+  // Raw chapters array from curriculum (for Phase 0 compatibility)
+  // Each chapter has: chapterId, chapterNumber, chapterName, unitId, unitNumber
+  chapters      Json?
+
+  // Relations
+  chaptersList  Chapter[]
+  questions     Question[]
+  templates     Template[]
+  unitsList     Unit[]   @relation("CurriculumUnits")
+
+  @@index([board, class, subject])
+  @@index([subjectCode])
 }
 
-// Phase 0: Topic (simplified)
-model Topic {
-  id          String   @id @default(cuid())
-  name        String
+// Phase 0: Chapter
+// Represents a chapter within a curriculum, linked to a Unit
+model Chapter {
+  id           String   @id @default(cuid())
+  chapterId    String   @unique
+  number       Int
+  title        String
+  unitId       String?
+  unitNumber   Int?
+
+  // Relationships
   curriculumId String
+  curriculum   Curriculum @relation(fields: [curriculumId], references: [id])
+  questions    Question[]
+
+  @@index([curriculumId])
+  @@index([unitId])
+  @@index([chapterId])
+}
+
+// Unit model for structured unit tracking (optional, for Phase 1+)
+model Unit {
+  id         String   @id @default(cuid())
+  unitId     String   @unique
+  unitNumber Int
+  unitRoman  String?
+  name       String
+  chapterIds Json?    // Array of chapter IDs
+
+  // Relationships
+  curriculumId String
+  curriculum   Curriculum @relation("CurriculumUnits", fields: [curriculumId], references: [id])
+
+  @@index([curriculumId])
+  @@index([unitId])
 }
 
 // Phase 0: Question
+// Represents a question with full content and provenance tracking
 model Question {
   id         String   @id @default(cuid())
+
+  // Identifiers
   stableId   String   @unique
-  stem       String
+  versionId  String   // Computed hash of content for versioning
+
+  // Question content stored as JSON for flexibility
+  // Structure: { stem, options, answerKey, solution, language, tags }
+  content    Json
+
+  // Classification
   type       QuestionType
-  options    Json?
-  answerKey  Json
+  difficulty String?  // EASY, MEDIUM, HARD (stored as string for flexibility)
   marks      Int
-  topicId    String
-  status     QuestionStatus
+  language   String?  @default("en")
+  tags       String[] @default([])
+
+  // Topic reference (null for Phase 0)
+  topicId    String?
+
+  // Direct chapter reference
+  chapterId  String?
+  chapter    Chapter? @relation(fields: [chapterId], references: [id])
+
+  // Review status metadata as JSON
+  // Structure: { status, reviewer, reviewedAt, evidenceId }
+  review     Json?
+
+  // Provenance tracking as JSON
+  // Structure: { sourceLabel, sourceTitle, sourceUrl, sourceItemId, creator, authoredAt, originType, copyright, extractedAt, licence, attribution, rightsRecordId, rightsStatus }
+  provenance Json?
+
+  // Relationships
+  curriculumId String
+  curriculum   Curriculum @relation(fields: [curriculumId], references: [id])
+
+  // Template junction relations
+  templatesList   QuestionTemplate[]
+
+  @@index([curriculumId])
+  @@index([chapterId])
+  @@index([topicId])
+  @@index([difficulty])
+  @@index([versionId])
+  @@index([type, difficulty])
 }
 
-// Phase 1: Blueprint
-model Blueprint {
-  id        String   @id @default(cuid())
-  class     Int
-  subject   String
-  config    Json
-  createdAt DateTime @default(now())
+// Phase 0: Template
+// Represents a paper blueprint with sections and difficulty distribution
+model Template {
+  id             String   @id @default(cuid())
+  templateId     String   @unique
+  mode           String   // FULL_SUBJECT, CHAPTER_FILTERED, etc.
+  status         String?  // APPROVED_BY_OWNER_2026-11-07, etc.
+  durationMinutes Int?
+  totalQuestions Int?
+  totalMarks     Int?
+
+  // Sections structure as JSON
+  // Array of { label, type, count, marksEach }
+  sections       Json?
+
+  // Difficulty distribution as JSON
+  // { EASY: number, MEDIUM: number, HARD: number }
+  difficultyCounts Json?
+
+  // Chapter slot counts as JSON
+  // { "chapterId": count, ... }
+  chapterSlotCounts  Json?
+
+  // Curriculum source
+  editionId      String?
+
+  // Relationships
+  curriculum     Curriculum? @relation(fields: [editionId], references: [editionId])
+  questions      QuestionTemplate[]
+
+  @@index([editionId])
+  @@index([mode])
+  @@index([status])
 }
 
+// Junction table for Template-Question relationships
+model QuestionTemplate {
+  id         String   @id @default(cuid())
+  templateId String
+  questionId String
+
+  template   Template @relation(fields: [templateId], references: [id])
+  question   Question @relation(fields: [questionId], references: [id])
+
+  @@unique([templateId, questionId])
+  @@index([templateId])
+  @@index([questionId])
+}
+
+// Enums
 enum QuestionType {
   MCQ_SINGLE
   MCQ_MULTI

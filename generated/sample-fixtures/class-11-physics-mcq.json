@@ -3,42 +3,45 @@
   "class": 11,
   "board": "CBSE",
   "subject": "Physics",
-  "title": "Class 11 Physics — MCQ Practice Set",
-  "chapters": ["Kinematics", "Laws of Motion"],
+  "title": "Class 11 Physics — Kinematics Practice Set",
+  "chapters": ["Kinematics"],
   "questions": [
     {
       "stableId": "Q-P11-K001",
       "type": "MCQ_SINGLE",
-      "stem": "A body moving with constant acceleration covers distances **s₁** and **s₂** in **t₁** and **t₂** seconds respectively. Which formula gives its acceleration?",
+      "stem": "A body starts from rest and moves with constant positive acceleration. Its displacements from the starting point are **s₁** and **s₂** after **t₁** and **t₂** seconds respectively, where **0 < t₁ < t₂**. Which formula gives its acceleration?",
       "options": {
-        "A": "(s₂ - s₁) / (t₂² - t₁²)",
-        "B": "2(t₂ - t₁) / (s₂ - s₁)",
-        "C": "(s₂ - s₁) / (t₂² - t₁²)",
-        "D": "(s₂ + s₁) / (t₂ + t₁)"
+        "A": "2(s₂ - s₁) / (t₂² - t₁²)",
+        "B": "(s₂ - s₁) / (t₂² - t₁²)",
+        "C": "2(s₂ - s₁) / (t₂ - t₁)",
+        "D": "2(s₂ + s₁) / (t₂² - t₁²)"
       },
       "answerKey": "A",
+      "solution": "Starting from rest, s₁ = ½at₁² and s₂ = ½at₂². Subtracting gives s₂ - s₁ = ½a(t₂² - t₁²), so a = 2(s₂ - s₁)/(t₂² - t₁²), for t₂² ≠ t₁².",
       "marks": 1,
       "difficulty": "MEDIUM",
       "topicId": "topic-kinematics-001",
-      "status": "VERIFIED"
+      "chapterId": "cbse-2026-27-phy-042-xi-ch02",
+      "status": "REVIEW_NEEDED"
     },
     {
       "stableId": "Q-P11-N001",
       "type": "NUMERICAL",
-      "stem": "A particle starts from rest and moves in a straight line with constant acceleration. It covers distances **s₁** and **s₂** in **t₁** and **t₂** seconds respectively. If **s₁ = 2 m**, **s₂ = 4 m**, **t₁ = 2 s**, **t₂ = 3 s**, find acceleration (**m/s²**).",
-      "answerKey": 2,
+      "stem": "A particle starts from rest and moves in a straight line with constant acceleration. Its displacement from the starting point is **s₁ = 2 m** after **t₁ = 2 s** and **s₂ = 4.5 m** after **t₂ = 3 s**. Find its acceleration (**m/s²**).",
+      "answerKey": 1,
       "tolerance": 0.01,
-      "solution": "Using s = ut + ½at², eliminate 'u' to find a = 2 m/s².",
+      "solution": "Starting from rest, s = ½at². At 2 s, a = 2(2 m)/(2 s)² = 1 m/s². At 3 s, a = 2(4.5 m)/(3 s)² = 1 m/s². Both observations agree.",
       "marks": 2,
       "difficulty": "EASY",
       "topicId": "topic-kinematics-001",
-      "status": "VERIFIED"
+      "chapterId": "cbse-2026-27-phy-042-xi-ch02",
+      "status": "REVIEW_NEEDED"
     }
   ],
   "blueprintSummary": {
     "totalQuestions": 2,
     "totalMarks": 3,
-    "difficultyDist": { "EASY": 33, "MEDIUM": 33, "HARD": 34 },
+    "difficultyDist": { "EASY": 50, "MEDIUM": 50, "HARD": 0 },
     "questionTypes": { "MCQ_SINGLE": 1, "NUMERICAL": 1 }
   }
 }

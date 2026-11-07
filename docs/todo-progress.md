@@ -2,6 +2,8 @@
 
 Updated: 7 November 2026. Scope: this standalone paper-generation project only. Use [paper-generation-pipeline.md](paper-generation-pipeline.md) for stage contracts and the [roadmap](../NIERA_QUESTION_PAPER_GENERATION_ROADMAP_STANDALONE.md) for product requirements F01–F31 and phase exit gates.
 
+Phase 0 decisions and evidence are in two files: [decisions](phase0-decisions.md) and [question bank](phase0-question-bank.md).
+
 ## How to maintain this tracker
 
 - `[x]` means implemented **and** verified with linked evidence. `[ ]` means incomplete, including work that has only a stub or design note. Add an owner, completion date, and proof link when closing a task.
@@ -14,9 +16,9 @@ Updated: 7 November 2026. Scope: this standalone paper-generation project only. 
 | Area | Status | Evidence and gap |
 |---|---|---|
 | Product definition | Documented | Roadmap defines flows, F01–F31, phase gates, and open product decisions. |
-| UI shell | Partial | Class/subject selectors and sample outline exist; [UI proof](ui-refresh-proof.md). Choices are hardcoded and no questions appear. |
-| Curriculum and data | Partial schema | `prisma/schema.prisma` has simplified models; seed does not match schema. No confirmed support matrix or migrations. |
-| Verified content | Blocked | The existing two-question fixture has correctness defects and is not a usable verified bank. |
+| UI shell | Implemented | Class/subject selectors with Phase 0 support matrix; [UI proof](ui-refresh-proof.md). Only CBSE Class 11 Physics shown. |
+| Curriculum and data | Aligned | Schema updated per P1.04; Prisma Client generated successfully. [Schema proof](p1-04-schema-alignment.md). [Contracts](p1-03-data-contracts.md). |
+| Verified content | 40 owner-approved items | Full-subject (30) and Chapter 2 (10) items approved by the product owner; both templates feasible per `npm run validate:phase0`. See [question bank](phase0-question-bank.md). |
 | Core pipeline | Not started | No resolver, blueprint builder, bank selector, assembler, or paper-level validator. |
 | AI, persistence, export | Not started | Described in docs only. |
 | Quality evidence | Not started | No tests or measured benchmark results for generation, export, or scale. |
@@ -25,24 +27,24 @@ Updated: 7 November 2026. Scope: this standalone paper-generation project only. 
 
 Exit gate: the product owner confirms supported combinations and source rights; unsupported combinations are not advertised. Produce a support matrix, coverage map, two valid blueprint examples, reviewed questions/keys, and an open-decision log.
 
-- [ ] P0.01 Inventory existing Niera curriculum and question sources, if accessible; record IDs, versions, owners, rights, and coverage. Evidence: source inventory in `/docs`.
-- [ ] P0.02 Decide the initial class range, subjects, board/curriculum default, and compatible patterns. Record the support matrix and the exact class+subject behavior. Decision owner: product owner.
-- [ ] P0.03 Confirm the default paper template for each supported combination: sections, question types, counts, marks, duration, difficulty, and coverage policy. Do not treat the UI's universal sample as a product decision.
-- [ ] P0.04 Decide whether student question editing is allowed, which output formats launch with the product, whether paper archives/presets launch, and retention rules. Decision owner: product owner.
-- [ ] P0.05 Decide source-use rights and the review policy for bank and AI-generated content, including accepted independent verification of quantitative answers. Decision owner: product/content owner.
-- [ ] P0.06 Repair or replace `generated/sample-fixtures/class-11-physics-mcq.json`. Remove duplicate MCQ choices, independently derive every key and solution, and obtain a qualified review record. The current numerical values are inconsistent with “starts from rest.”
-- [ ] P0.07 Create reviewed full-subject and chapter-filtered acceptance fixtures, including valid scope IDs, question versions, marks, solutions, and provenance. Record explicit benchmark inputs.
-- [ ] P0.08 Correct the sample in `docs/blueprint-engine.md`: its listed rows total 25, not 40 marks. Verify every documented example against the same invariant checks planned for code.
-- [ ] P0.09 Confirm Phase 0 exit with a linked support matrix, rights record, and reviewer sign-off. No unsupported UI choice should be called available afterward.
+- [x] P0.01 Inventory curriculum and question sources. Completed 7 November 2026; summary in [decisions](phase0-decisions.md) section 4.
+- [x] P0.02 Initial scope: CBSE Class XI Physics only, edition `cbse-2026-27-phy-042-xi`. Product owner, 7 November 2026. Evidence: [decisions](phase0-decisions.md) section 1, `data/curriculum/cbse-2026-27-class11-physics.json`.
+- [x] P0.03 Default templates `FULL_SUBJECT` (30×1 MCQ, 60 min, 9/15/6) and `CHAPTER_FILTERED` (10×1 MCQ, 20 min, 3/5/2) approved. Product owner, 7 November 2026. Evidence: [decisions](phase0-decisions.md) section 2, `data/templates/`.
+- [x] P0.04 Editing, outputs, archive, and retention decided. Product owner, 7 November 2026. Evidence: [decisions](phase0-decisions.md) section 3.
+- [x] P0.05 Rights policy (Niera originals + CC BY with attribution; textbook, past papers, NC/ND blocked) and review policy (qualified teacher signs each version) decided. Product owner, 7 November 2026. Evidence: [decisions](phase0-decisions.md) section 4. Reviewer not yet named.
+- [x] P0.06 Replaced: the legacy two-item sample (unknown origin, no rights record) is kept only as a repaired example and excluded from both templates; the 40 owner-approved items replace it. Completed 7 November 2026; [question bank](phase0-question-bank.md).
+- [x] P0.07 Full-subject (30) and Chapter 2 (10) acceptance fixtures with chapter IDs, version hashes, rights records, and owner approval (`data/reviews/REV-OWNER-2026-11-07.json`). `npm run validate:phase0` reports both templates feasible. Completed 7 November 2026; [question bank](phase0-question-bank.md).
+- [x] P0.08 Blueprint example corrected from 40 to 25 marks. Completed 7 November 2026; [question bank](phase0-question-bank.md).
+- [x] P0.09 Phase 0 exit confirmed 7 November 2026: support matrix, templates, policies, rights records, and owner sign-off are in [decisions](phase0-decisions.md) section 5. Only CBSE XI Physics may be offered; other UI choices must stay unavailable (enforced in P1.02).
 
 ## Phase 1: student flow and shared contracts
 
 Exit gate: Class → Subject → Preview works with reviewed fixture questions; optional empty scope means full subject; invalid dependent selections reset correctly. Flows A and B can be simulated.
 
 - [x] P1.01 Build a responsive prototype screen with labelled class/subject selectors, visible sample settings, and an honest outline state. Evidence: [UI proof](ui-refresh-proof.md). This is a UI milestone only.
-- [ ] P1.02 Replace hardcoded class/subject choices with the confirmed support matrix. Hide or disable combinations without verified coverage, and display the selected curriculum/pattern default.
-- [ ] P1.03 Define runtime-checked request, curriculum, blueprint, slot, question, draft, finalized-paper, and validation-result contracts. Document field meaning, version IDs, and error shapes.
-- [ ] P1.04 Align Prisma schema, generated client import, seed data, and migration workflow. Seed must compile and run repeatedly without duplicate curriculum data. Add real curriculum/chapter/topic/concept relationships where required by the confirmed slice.
+- [x] P1.02 Replace hardcoded class/subject choices with the confirmed support matrix. Hide or disable combinations without verified coverage, and display the selected curriculum/pattern default. Evidence: [Support matrix proof](p1-02-support-matrix-improvements.md). Only CBSE Class 11 Physics (edition: cbse-2026-27-phy-042-xi) is supported.
+- [x] P1.03 Define runtime-checked request, curriculum, blueprint, slot, question, draft, finalized-paper, and validation-result contracts. Document field meaning, version IDs, and error shapes. Evidence: [Contracts documentation](p1-03-data-contracts.md). File: `src/lib/contracts.ts`.
+- [x] P1.04 Align Prisma schema, generated client import, seed data, and migration workflow. Seed must compile and run repeatedly without duplicate curriculum data. Add real curriculum/chapter/topic/concept relationships where required by the confirmed slice. Evidence: [Schema alignment proof](p1-04-schema-alignment.md), `npx prisma generate` completed successfully.
 - [ ] P1.05 Implement the curriculum resolver for a supported class+subject. An empty chapter/topic list resolves the eligible full subject; selected IDs must belong to the pinned curriculum version.
 - [ ] P1.06 Add the optional chapter/topic picker and clear incompatible selections when class or subject changes. Show exact selected scope.
 - [ ] P1.07 Connect the UI preview to reviewed fixture questions and their section/marks data. Do not show a generated-paper success state with an empty question list.
@@ -137,4 +139,4 @@ Exit gate: roadmap Section 9 quality gates pass; known limits and measured laten
 
 ## Immediate next milestone
 
-Complete P0.02–P0.08 for **one** confirmed class+subject, then P1.03–P1.07. The reviewable outcome is an actual, independently checked fixture paper in the UI with a consistent blueprint. Do not start model generation or PDF work to compensate for missing verified content.
+Phase 0 is closed. Next: P1.03–P1.07, showing an actual paper from the 40 approved items in the UI with a consistent blueprint. Do not start model generation or PDF work early.

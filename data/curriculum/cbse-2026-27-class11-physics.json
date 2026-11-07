@@ -1,0 +1,211 @@
+{
+  "schemaVersion": "phase0-curriculum-v1",
+  "editionId": "cbse-2026-27-phy-042-xi",
+  "board": "CBSE",
+  "class": 11,
+  "subject": "Physics",
+  "subjectCode": "042",
+  "academicYear": "2026-27",
+  "source": {
+    "url": "https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart2/Physics_SecP2_2026-27.pdf",
+    "retrievedAt": "2026-11-07",
+    "note": "The document cover says 2025-26, but its Class XI course structure says 2026-27. Treated as the 2026-27 edition per owner decision of 2026-11-07."
+  },
+  "granularity": "Chapter level only; topic and concept IDs are not defined.",
+  "units": [
+    {
+      "unitId": "cbse-2026-27-phy-042-xi-u01",
+      "unitNumber": 1,
+      "unitRoman": "I",
+      "unitName": "Physical World and Measurement",
+      "chapterIds": [
+        "cbse-2026-27-phy-042-xi-ch01"
+      ]
+    },
+    {
+      "unitId": "cbse-2026-27-phy-042-xi-u02",
+      "unitNumber": 2,
+      "unitRoman": "II",
+      "unitName": "Kinematics",
+      "chapterIds": [
+        "cbse-2026-27-phy-042-xi-ch02",
+        "cbse-2026-27-phy-042-xi-ch03"
+      ]
+    },
+    {
+      "unitId": "cbse-2026-27-phy-042-xi-u03",
+      "unitNumber": 3,
+      "unitRoman": "III",
+      "unitName": "Laws of Motion",
+      "chapterIds": [
+        "cbse-2026-27-phy-042-xi-ch04"
+      ]
+    },
+    {
+      "unitId": "cbse-2026-27-phy-042-xi-u04",
+      "unitNumber": 4,
+      "unitRoman": "IV",
+      "unitName": "Work, Energy and Power",
+      "chapterIds": [
+        "cbse-2026-27-phy-042-xi-ch05"
+      ]
+    },
+    {
+      "unitId": "cbse-2026-27-phy-042-xi-u05",
+      "unitNumber": 5,
+      "unitRoman": "V",
+      "unitName": "Motion of System of Particles and Rigid Body",
+      "chapterIds": [
+        "cbse-2026-27-phy-042-xi-ch06"
+      ]
+    },
+    {
+      "unitId": "cbse-2026-27-phy-042-xi-u06",
+      "unitNumber": 6,
+      "unitRoman": "VI",
+      "unitName": "Gravitation",
+      "chapterIds": [
+        "cbse-2026-27-phy-042-xi-ch07"
+      ]
+    },
+    {
+      "unitId": "cbse-2026-27-phy-042-xi-u07",
+      "unitNumber": 7,
+      "unitRoman": "VII",
+      "unitName": "Properties of Bulk Matter",
+      "chapterIds": [
+        "cbse-2026-27-phy-042-xi-ch08",
+        "cbse-2026-27-phy-042-xi-ch09",
+        "cbse-2026-27-phy-042-xi-ch10"
+      ]
+    },
+    {
+      "unitId": "cbse-2026-27-phy-042-xi-u08",
+      "unitNumber": 8,
+      "unitRoman": "VIII",
+      "unitName": "Thermodynamics",
+      "chapterIds": [
+        "cbse-2026-27-phy-042-xi-ch11"
+      ]
+    },
+    {
+      "unitId": "cbse-2026-27-phy-042-xi-u09",
+      "unitNumber": 9,
+      "unitRoman": "IX",
+      "unitName": "Behaviour of Perfect Gases and Kinetic Theory of Gases",
+      "chapterIds": [
+        "cbse-2026-27-phy-042-xi-ch12"
+      ]
+    },
+    {
+      "unitId": "cbse-2026-27-phy-042-xi-u10",
+      "unitNumber": 10,
+      "unitRoman": "X",
+      "unitName": "Oscillations and Waves",
+      "chapterIds": [
+        "cbse-2026-27-phy-042-xi-ch13",
+        "cbse-2026-27-phy-042-xi-ch14"
+      ]
+    }
+  ],
+  "chapters": [
+    {
+      "chapterId": "cbse-2026-27-phy-042-xi-ch01",
+      "chapterNumber": 1,
+      "chapterName": "Units and Measurements",
+      "unitId": "cbse-2026-27-phy-042-xi-u01",
+      "unitNumber": 1
+    },
+    {
+      "chapterId": "cbse-2026-27-phy-042-xi-ch02",
+      "chapterNumber": 2,
+      "chapterName": "Motion in a Straight Line",
+      "unitId": "cbse-2026-27-phy-042-xi-u02",
+      "unitNumber": 2
+    },
+    {
+      "chapterId": "cbse-2026-27-phy-042-xi-ch03",
+      "chapterNumber": 3,
+      "chapterName": "Motion in a Plane",
+      "unitId": "cbse-2026-27-phy-042-xi-u02",
+      "unitNumber": 2
+    },
+    {
+      "chapterId": "cbse-2026-27-phy-042-xi-ch04",
+      "chapterNumber": 4,
+      "chapterName": "Laws of Motion",
+      "unitId": "cbse-2026-27-phy-042-xi-u03",
+      "unitNumber": 3
+    },
+    {
+      "chapterId": "cbse-2026-27-phy-042-xi-ch05",
+      "chapterNumber": 5,
+      "chapterName": "Work, Energy and Power",
+      "unitId": "cbse-2026-27-phy-042-xi-u04",
+      "unitNumber": 4
+    },
+    {
+      "chapterId": "cbse-2026-27-phy-042-xi-ch06",
+      "chapterNumber": 6,
+      "chapterName": "System of Particles and Rotational Motion",
+      "unitId": "cbse-2026-27-phy-042-xi-u05",
+      "unitNumber": 5
+    },
+    {
+      "chapterId": "cbse-2026-27-phy-042-xi-ch07",
+      "chapterNumber": 7,
+      "chapterName": "Gravitation",
+      "unitId": "cbse-2026-27-phy-042-xi-u06",
+      "unitNumber": 6
+    },
+    {
+      "chapterId": "cbse-2026-27-phy-042-xi-ch08",
+      "chapterNumber": 8,
+      "chapterName": "Mechanical Properties of Solids",
+      "unitId": "cbse-2026-27-phy-042-xi-u07",
+      "unitNumber": 7
+    },
+    {
+      "chapterId": "cbse-2026-27-phy-042-xi-ch09",
+      "chapterNumber": 9,
+      "chapterName": "Mechanical Properties of Fluids",
+      "unitId": "cbse-2026-27-phy-042-xi-u07",
+      "unitNumber": 7
+    },
+    {
+      "chapterId": "cbse-2026-27-phy-042-xi-ch10",
+      "chapterNumber": 10,
+      "chapterName": "Thermal Properties of Matter",
+      "unitId": "cbse-2026-27-phy-042-xi-u07",
+      "unitNumber": 7
+    },
+    {
+      "chapterId": "cbse-2026-27-phy-042-xi-ch11",
+      "chapterNumber": 11,
+      "chapterName": "Thermodynamics",
+      "unitId": "cbse-2026-27-phy-042-xi-u08",
+      "unitNumber": 8
+    },
+    {
+      "chapterId": "cbse-2026-27-phy-042-xi-ch12",
+      "chapterNumber": 12,
+      "chapterName": "Kinetic Theory",
+      "unitId": "cbse-2026-27-phy-042-xi-u09",
+      "unitNumber": 9
+    },
+    {
+      "chapterId": "cbse-2026-27-phy-042-xi-ch13",
+      "chapterNumber": 13,
+      "chapterName": "Oscillations",
+      "unitId": "cbse-2026-27-phy-042-xi-u10",
+      "unitNumber": 10
+    },
+    {
+      "chapterId": "cbse-2026-27-phy-042-xi-ch14",
+      "chapterNumber": 14,
+      "chapterName": "Waves",
+      "unitId": "cbse-2026-27-phy-042-xi-u10",
+      "unitNumber": 10
+    }
+  ]
+}

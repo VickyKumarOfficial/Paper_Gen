@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "phase0-template-v1",
+  "editionId": "cbse-2026-27-phy-042-xi",
+  "curriculumFile": "data/curriculum/cbse-2026-27-class11-physics.json",
+  "templates": [
+    {
+      "templateId": "cbse-2026-27-phy-042-xi-FULL_SUBJECT",
+      "mode": "FULL_SUBJECT",
+      "status": "APPROVED_BY_OWNER_2026-11-07",
+      "durationMinutes": 60,
+      "totalQuestions": 30,
+      "totalMarks": 30,
+      "sections": [
+        {
+          "label": "A",
+          "type": "MCQ_SINGLE",
+          "count": 30,
+          "marksEach": 1
+        }
+      ],
+      "difficultyCounts": {
+        "EASY": 9,
+        "MEDIUM": 15,
+        "HARD": 6
+      },
+      "chapterSlotCounts": {
+        "cbse-2026-27-phy-042-xi-ch01": 2,
+        "cbse-2026-27-phy-042-xi-ch02": 3,
+        "cbse-2026-27-phy-042-xi-ch03": 3,
+        "cbse-2026-27-phy-042-xi-ch04": 2,
+        "cbse-2026-27-phy-042-xi-ch05": 2,
+        "cbse-2026-27-phy-042-xi-ch06": 2,
+        "cbse-2026-27-phy-042-xi-ch07": 2,
+        "cbse-2026-27-phy-042-xi-ch08": 2,
+        "cbse-2026-27-phy-042-xi-ch09": 2,
+        "cbse-2026-27-phy-042-xi-ch10": 2,
+        "cbse-2026-27-phy-042-xi-ch11": 2,
+        "cbse-2026-27-phy-042-xi-ch12": 2,
+        "cbse-2026-27-phy-042-xi-ch13": 2,
+        "cbse-2026-27-phy-042-xi-ch14": 2
+      }
+    },
+    {
+      "templateId": "cbse-2026-27-phy-042-xi-CHAPTER_FILTERED",
+      "mode": "CHAPTER_FILTERED",
+      "status": "APPROVED_BY_OWNER_2026-11-07",
+      "durationMinutes": 20,
+      "totalQuestions": 10,
+      "totalMarks": 10,
+      "sections": [
+        {
+          "label": "A",
+          "type": "MCQ_SINGLE",
+          "count": 10,
+          "marksEach": 1
+        }
+      ],
+      "difficultyCounts": {
+        "EASY": 3,
+        "MEDIUM": 5,
+        "HARD": 2
+      },
+      "chapterScope": "ALL_SLOTS_FROM_SELECTED_CHAPTER"
+    }
+  ],
+  "eligibility": {
+    "rightsStatus": "CLEARED_UNDER_POLICY",
+    "reviewStatus": "APPROVED",
+    "note": "Only items whose exact versionId has teacher sign-off count as supply."
+  }
+}

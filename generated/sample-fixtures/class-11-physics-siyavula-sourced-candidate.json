@@ -1,0 +1,191 @@
+{
+  "schemaVersion": "phase0-question-set-v1",
+  "setId": "candidate-cbse-11-physics-siyavula-001",
+  "purpose": "review-only sourced candidate set; not approved paper supply",
+  "sourceAsset": {
+    "title": "Physical Sciences - Grade 11 CAPS, unbranded English learner ePUB",
+    "publisher": "Siyavula Education",
+    "downloadUrl": "https://www.siyavula.com/downloads/books/science/Gr11_PhysicalSciences_Learner_Eng_CC-BY.epub",
+    "sha256": "3d893a4364f52efe1991360302cfccb06030e03ad67d725867fb48f0f177a0f9",
+    "retrievedAt": "2026-11-07",
+    "editionMetadata": "ePUB package modified 2015-09-10T17:40:11Z",
+    "licence": "CC BY 4.0, as stated in OPS/xhtml/science11/front-matter-epubs/copyright_acknowledgements_ccby.html",
+    "licenceEvidenceUrl": "https://www.siyavula.com/read",
+    "attribution": "Adapted from Everything Maths and Science, Physical Sciences Grade 11, Siyavula Education, available at https://www.siyavula.com/. No Siyavula endorsement is implied.",
+    "reuseBoundary": "Only this unbranded ePUB; excludes branded editions and Siyavula Practice"
+  },
+  "reviewStatus": "REVIEW_NEEDED",
+  "rightsStatus": "CLEARED_UNDER_POLICY",
+  "questions": [
+    {
+      "schemaVersion": "phase0-question-v1",
+      "stableId": "candidate-siyavula-xi-physics-001",
+      "versionId": "sha256:84534ba25e36a19b3708f9f539fe98e939694f8563425ee4a5ac95b454490aaa",
+      "curriculum": {
+        "board": "CBSE",
+        "academicYear": "2026-27",
+        "class": 11,
+        "subject": "Physics",
+        "subjectCode": "042",
+        "unitNumber": 3,
+        "chapterNumber": 4,
+        "chapterName": "Laws of Motion",
+        "chapterId": "cbse-2026-27-phy-042-xi-ch04",
+        "topicId": null,
+        "conceptIds": []
+      },
+      "type": "SHORT_ANSWER",
+      "difficulty": "EASY",
+      "marks": 2,
+      "language": "en",
+      "content": {
+        "stem": "A force acts on an object. Name three effects that the force can have on the object.",
+        "options": null,
+        "answerKey": "A force can change shape, change direction of motion, and accelerate or stop a body.",
+        "solution": "A force can change the shape of the object. A force can change the direction in which the object is moving. A force can accelerate or stop a body."
+      },
+      "tags": [
+        "force",
+        "effects-of-force",
+        "newtons-laws"
+      ],
+      "provenance": {
+        "sourceTitle": "Physical Sciences - Grade 11 CAPS",
+        "sourceUrl": "https://www.siyavula.com/downloads/books/science/Gr11_PhysicalSciences_Learner_Eng_CC-BY.epub",
+        "sourceItemId": "OPS/xhtml/science11/02-newtons-laws-05.cnxmlplus.html#entry-1",
+        "sourceChapter": "Newton's laws, end of chapter exercises",
+        "sourceEntryOrdinal": 1,
+        "sourceAssetSha256": "3d893a4364f52efe1991360302cfccb06030e03ad67d725867fb48f0f177a0f9",
+        "creator": "Siyavula Education",
+        "extractedAt": "2026-11-07",
+        "licence": "CC BY 4.0",
+        "licenceEvidencePath": "OPS/xhtml/science11/front-matter-epubs/copyright_acknowledgements_ccby.html",
+        "attribution": "Everything Maths and Science, Siyavula Education, https://www.siyavula.com/",
+        "transformation": "Stem and solution copied as text; answerKey summarized from source solution; CBSE mapping, tags, marks and difficulty added as candidates",
+        "rightsRecordId": "RR-CCBY-SIYAVULA-2026-11-07",
+        "rightsStatus": "CLEARED_UNDER_POLICY"
+      },
+      "review": {
+        "status": "REVIEW_NEEDED",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidenceId": null
+      }
+    },
+    {
+      "schemaVersion": "phase0-question-v1",
+      "stableId": "candidate-siyavula-xi-physics-003",
+      "versionId": "sha256:26fbb4438dbdffd2b7410e094c92d451327de5fbf63786f6fe756e757b59384b",
+      "curriculum": {
+        "board": "CBSE",
+        "academicYear": "2026-27",
+        "class": 11,
+        "subject": "Physics",
+        "subjectCode": "042",
+        "unitNumber": 3,
+        "chapterNumber": 4,
+        "chapterName": "Laws of Motion",
+        "chapterId": "cbse-2026-27-phy-042-xi-ch04",
+        "topicId": null,
+        "conceptIds": []
+      },
+      "type": "SHORT_ANSWER",
+      "difficulty": "EASY",
+      "marks": 2,
+      "language": "en",
+      "content": {
+        "stem": "Write down a statement of Newton's second law of Motion (in words).",
+        "options": null,
+        "answerKey": "Acceleration is in the direction of net force, proportional to that force and inversely proportional to mass.",
+        "solution": "If a resultant force acts on a body, it will cause the body to accelerate in the direction of the resultant force. The acceleration of the body will be directly proportional to the resultant force and inversely proportional to the mass of the body."
+      },
+      "tags": [
+        "newtons-second-law",
+        "net-force",
+        "acceleration"
+      ],
+      "provenance": {
+        "sourceTitle": "Physical Sciences - Grade 11 CAPS",
+        "sourceUrl": "https://www.siyavula.com/downloads/books/science/Gr11_PhysicalSciences_Learner_Eng_CC-BY.epub",
+        "sourceItemId": "OPS/xhtml/science11/02-newtons-laws-05.cnxmlplus.html#entry-54",
+        "sourceChapter": "Newton's laws, end of chapter exercises",
+        "sourceEntryOrdinal": 54,
+        "sourceAssetSha256": "3d893a4364f52efe1991360302cfccb06030e03ad67d725867fb48f0f177a0f9",
+        "creator": "Siyavula Education",
+        "extractedAt": "2026-11-07",
+        "licence": "CC BY 4.0",
+        "licenceEvidencePath": "OPS/xhtml/science11/front-matter-epubs/copyright_acknowledgements_ccby.html",
+        "attribution": "Everything Maths and Science, Siyavula Education, https://www.siyavula.com/",
+        "transformation": "Stem and solution copied as text; answerKey summarized from source solution; CBSE mapping, tags, marks and difficulty added as candidates",
+        "rightsRecordId": "RR-CCBY-SIYAVULA-2026-11-07",
+        "rightsStatus": "CLEARED_UNDER_POLICY"
+      },
+      "review": {
+        "status": "REVIEW_NEEDED",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidenceId": null
+      }
+    },
+    {
+      "schemaVersion": "phase0-question-v1",
+      "stableId": "candidate-siyavula-xi-physics-004",
+      "versionId": "sha256:f67d4b1bb6f156573b1423481493c837ec11b245a7f1b3dd10110595baf2c88b",
+      "curriculum": {
+        "board": "CBSE",
+        "academicYear": "2026-27",
+        "class": 11,
+        "subject": "Physics",
+        "subjectCode": "042",
+        "unitNumber": 2,
+        "chapterNumber": 3,
+        "chapterName": "Motion in a Plane",
+        "chapterId": "cbse-2026-27-phy-042-xi-ch03",
+        "topicId": null,
+        "conceptIds": []
+      },
+      "type": "MCQ_SINGLE",
+      "difficulty": "EASY",
+      "marks": 1,
+      "language": "en",
+      "content": {
+        "stem": "A point is acted on by two forces and the resultant is zero. The forces",
+        "options": {
+          "A": "have equal magnitudes and directions.",
+          "B": "have equal magnitudes but opposite directions.",
+          "C": "act perpendicular to each other.",
+          "D": "act in the same direction."
+        },
+        "answerKey": "B",
+        "solution": "have equal magnitudes but opposite directions."
+      },
+      "tags": [
+        "vectors",
+        "resultant-force",
+        "equilibrium"
+      ],
+      "provenance": {
+        "sourceTitle": "Physical Sciences - Grade 11 CAPS",
+        "sourceUrl": "https://www.siyavula.com/downloads/books/science/Gr11_PhysicalSciences_Learner_Eng_CC-BY.epub",
+        "sourceItemId": "OPS/xhtml/science11/01-vectors-in-two-dimensions-05.cnxmlplus.html#entry-21",
+        "sourceChapter": "Vectors in two dimensions, end of chapter exercises",
+        "sourceEntryOrdinal": 21,
+        "sourceAssetSha256": "3d893a4364f52efe1991360302cfccb06030e03ad67d725867fb48f0f177a0f9",
+        "creator": "Siyavula Education",
+        "extractedAt": "2026-11-07",
+        "licence": "CC BY 4.0",
+        "licenceEvidencePath": "OPS/xhtml/science11/front-matter-epubs/copyright_acknowledgements_ccby.html",
+        "attribution": "Everything Maths and Science, Siyavula Education, https://www.siyavula.com/",
+        "transformation": "Stem, options and solution copied as text; CBSE mapping, tags, marks and difficulty added as candidates",
+        "rightsRecordId": "RR-CCBY-SIYAVULA-2026-11-07",
+        "rightsStatus": "CLEARED_UNDER_POLICY"
+      },
+      "review": {
+        "status": "REVIEW_NEEDED",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidenceId": null
+      }
+    }
+  ]
+}
